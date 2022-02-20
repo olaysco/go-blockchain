@@ -123,7 +123,7 @@ func (s *State) apply(tx Tx) error {
 	s.Balances[tx.From] -= tx.Value
 
 	// Credit thte receiver.
-	s.Balances[tx.To] -= tx.Value
+	s.Balances[tx.To] += tx.Value
 
 	return nil
 }
